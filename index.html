@@ -2,205 +2,1001 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YODA — Intergenerational Mentorship Program</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>YODA — Where life stories meet care</title>
 <style>
-:root{--terracotta:#B85042;--terracotta-dark:#8C3A30;--sand:#F5E6D3;--sand-light:#FDF8F3;--sage:#7A9E7E;--warm-gray:#6B5B4F;--cream:#FFFBF5;--charcoal:#2D2419;--white:#FFFFFF;--border:#DDD2C6;--border-light:#EDE6DD}
-*{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;font-family:'DM Sans',sans-serif;background:radial-gradient(ellipse at 30% 20%,rgba(184,80,66,.04) 0%,transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(122,158,126,.04) 0%,transparent 60%),var(--sand-light)}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes checkmark{0%{stroke-dashoffset:50}100%{stroke-dashoffset:0}}
-.fade-in{animation:fadeInUp .5s ease forwards}
-.phone{width:100%;max-width:420px;min-height:600px;max-height:90vh;background:var(--cream);border-radius:28px;box-shadow:0 20px 60px rgba(45,36,25,.1),0 1px 3px rgba(45,36,25,.06);overflow:hidden;overflow-y:auto;border:1px solid rgba(237,230,221,.6)}
-.hdr{background:linear-gradient(135deg,var(--terracotta),var(--terracotta-dark));padding:24px 24px 20px;position:relative;overflow:hidden}
-.hdr::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.06)}
-.hdr h1{font-family:'DM Serif Display';font-size:36px;color:#fff;letter-spacing:.04em;position:relative;z-index:1;margin:0}
-.hdr p{font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.08em;text-transform:uppercase;font-weight:500;position:relative;z-index:1;margin-top:2px}
-.ltg{position:absolute;top:16px;right:16px;z-index:2;display:flex;background:rgba(255,255,255,.15);border-radius:20px;overflow:hidden}
-.ltg button{padding:6px 14px;font-family:'DM Sans';font-size:12px;font-weight:600;border:none;cursor:pointer;color:rgba(255,255,255,.6);background:transparent;transition:.25s;letter-spacing:.03em}
-.ltg button.on{background:rgba(255,255,255,.25);color:#fff;border-radius:20px}
-.scr{padding:28px 24px;display:none}.scr.on{display:block}
-.dots{display:flex;gap:8px;justify-content:center;margin-bottom:28px}
-.dot{height:10px;border-radius:5px;background:#D9CFC4;width:10px;transition:.4s}.dot.on{width:36px;background:var(--terracotta)}
-h2{font-family:'DM Serif Display';font-size:22px;color:var(--charcoal);margin-bottom:4px}
-.sub{font-size:13px;color:var(--warm-gray);margin-bottom:24px}
-.fld{margin-bottom:16px}
-.fld label{display:block;font-size:13px;font-weight:600;color:var(--warm-gray);margin-bottom:6px}.fld .rq{color:var(--terracotta)}
-.fld input,.fld select,.fld textarea{width:100%;padding:12px 16px;border-radius:10px;border:1.5px solid var(--border);background:var(--white);font-family:'DM Sans';font-size:15px;color:var(--charcoal);transition:.2s}
-.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--terracotta);box-shadow:0 0 0 3px rgba(184,80,66,.12)}
-.fld input::placeholder,.fld textarea::placeholder{color:#B8A99A}
-.fld select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B5B4F' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
-.fld textarea{resize:vertical}
-.bt{padding:14px 32px;border-radius:12px;font-family:'DM Sans';font-size:15px;font-weight:600;cursor:pointer;transition:.25s;display:inline-flex;align-items:center;justify-content:center}
-.bt:hover{transform:translateY(-1px)}.bt:disabled{opacity:.5;cursor:not-allowed;transform:none}
-.bt1{background:var(--terracotta);color:#fff;border:none;box-shadow:0 4px 16px rgba(184,80,66,.25)}
-.bt2{background:var(--sage);color:#fff;border:none;box-shadow:0 4px 16px rgba(122,158,126,.25)}
-.bt3{background:transparent;color:var(--warm-gray);border:1.5px solid #D9CFC4}
-.bfw{width:100%}.brow{display:flex;gap:12px;margin-top:24px}.bgr{flex:1}
-.rc{background:var(--white);border-radius:20px;padding:28px 24px;border:1.5px solid var(--border-light);cursor:pointer;position:relative;overflow:hidden;transition:.3s;margin-bottom:16px}
-.rc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.12)}
-.ab{position:absolute;top:0;left:0;width:4px;height:100%;border-radius:20px 0 0 20px}
-.ci{display:flex;align-items:flex-start;gap:16px}
-.ri{width:64px;height:64px;border-radius:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-.rt{font-family:'DM Serif Display';font-size:20px;color:var(--charcoal);margin-bottom:6px}
-.rd{font-size:13px;color:var(--warm-gray);line-height:1.6}
-.rct{font-size:12px;font-weight:600;margin-top:10px}
-.dr{display:flex;gap:6px;flex-wrap:wrap}
-.db{width:44px;height:44px;border-radius:22px;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--border);background:var(--white);color:var(--warm-gray);font-family:'DM Sans';font-size:12px;font-weight:600;cursor:pointer;transition:.2s}
-.db.on{border:2px solid var(--terracotta);background:var(--terracotta);color:#fff}
-.sr{display:flex;flex-wrap:wrap;gap:8px}
-.sb{padding:8px 16px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);color:var(--warm-gray);font-family:'DM Sans';font-size:13px;cursor:pointer;transition:.2s}
-.sb.on{border:2px solid var(--terracotta);background:rgba(184,80,66,.08);color:var(--terracotta);font-weight:600}
-.ib{border-radius:14px;padding:16px 18px;margin-bottom:24px;font-size:13px;color:var(--warm-gray);line-height:1.7}
-.ib strong{color:var(--charcoal)}
-.ibt{background:rgba(184,80,66,.05);border:1px solid rgba(184,80,66,.12)}
-.ibs{background:rgba(122,158,126,.08);border:1px solid rgba(122,158,126,.15)}
-.ibn{background:var(--sand);border:1px solid var(--border-light)}
-.fg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
-.fc{background:var(--white);border-radius:14px;padding:16px 12px;text-align:center;border:1px solid var(--border-light)}
-.fe{font-size:22px;margin-bottom:6px}.fl{font-size:13px;font-weight:600;color:var(--charcoal);margin-bottom:2px}.fd{font-size:11px;color:var(--warm-gray)}
-.hr{width:100%;height:200px;border-radius:16px;margin-bottom:24px;background:linear-gradient(170deg,var(--sand),#E8D5C4);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.hi{position:absolute;opacity:.12}
-.ft{text-align:center;padding:16px 24px 20px;font-size:11px;color:#C4B8AA;border-top:1px solid var(--border-light)}
-.po{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:100;align-items:center;justify-content:center;padding:20px}
-.po.on{display:flex}
-.pb{background:var(--cream);border-radius:20px;max-width:400px;width:100%;max-height:80vh;overflow-y:auto;padding:32px 24px;box-shadow:0 20px 60px rgba(0,0,0,.2)}
-.pb h3{font-family:'DM Serif Display';font-size:20px;color:var(--charcoal);margin-bottom:16px}
-.pb p{font-size:13px;color:var(--warm-gray);line-height:1.7;margin-bottom:12px}
-.pb .st{font-size:13px;font-weight:700;color:var(--charcoal);margin:16px 0 6px}
-.ck{display:flex;align-items:flex-start;gap:10px;margin-bottom:20px;cursor:pointer}
-.cb{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--border);background:var(--white);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:.2s;margin-top:1px}
-.cb.on{background:var(--terracotta);border-color:var(--terracotta)}
-.cb svg{opacity:0;transition:.2s}.cb.on svg{opacity:1}
-.cl{font-size:13px;color:var(--warm-gray);line-height:1.5}
-.cl a{color:var(--terracotta);text-decoration:underline;cursor:pointer}
-.sw{text-align:center;padding:48px 24px}
-.sw h2{font-family:'DM Serif Display';font-size:28px;color:var(--charcoal);margin-bottom:12px}
-.sw p{font-size:15px;color:var(--warm-gray);line-height:1.7;max-width:380px;margin:0 auto 32px}
-.smb{background:var(--sand);border-radius:16px;padding:20px 24px;max-width:360px;margin:0 auto;display:flex;align-items:center;gap:16px}
-.smi{width:44px;height:44px;border-radius:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.dn{font-size:12px;color:#B8A99A;margin-top:12px}
-.cen{text-align:center}
+  /* ─────────────────────────────────────────
+     YODA design tokens — terracotta palette
+     ───────────────────────────────────────── */
+  :root {
+    --terracotta: #B85042;
+    --terracotta-dark: #8B2E1F;
+    --terracotta-darker: #6B1E12;
+    --sand: #EFE8D8;
+    --cream: #F5F0E8;
+    --pale: #FAF6EE;
+    --tan-bg: #C99A87;
+    --tan-bg-deep: #B68874;
+    --dark: #3A2E2A;
+    --muted: #6B5D57;
+    --soft-muted: #8A7A72;
+    --line: rgba(58, 46, 42, 0.12);
+    --shadow-soft: 0 4px 16px rgba(60, 30, 20, 0.10);
+    --shadow-card: 0 8px 28px rgba(60, 30, 20, 0.16);
+
+    /* responsive type scale - base 16px, scales fluidly */
+    --fs-xs: clamp(11px, 1.6vh, 13px);
+    --fs-sm: clamp(13px, 1.9vh, 15px);
+    --fs-base: clamp(15px, 2.1vh, 17px);
+    --fs-md: clamp(17px, 2.4vh, 19px);
+    --fs-lg: clamp(20px, 3vh, 24px);
+    --fs-xl: clamp(26px, 4vh, 34px);
+    --fs-display: clamp(34px, 5.5vh, 48px);
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overscroll-behavior: none;
+  }
+
+  body {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    background: var(--tan-bg);
+    color: var(--dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    position: fixed;
+    inset: 0;
+  }
+
+  /* Subtle paper texture on background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(255, 246, 232, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 85% 90%, rgba(139, 46, 31, 0.10) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ─────────────────────────────────────────
+     App container
+     ───────────────────────────────────────── */
+  .app {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+
+  .screen {
+    width: 100%;
+    height: 100%;
+    max-width: 760px;
+    max-height: 1100px;
+    background: var(--pale);
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 0 0 transparent;
+  }
+
+  /* On larger devices (iPad), give the screen a card look */
+  @media (min-width: 700px) and (min-height: 900px) {
+    .app { padding: 24px; }
+    .screen {
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(60, 30, 20, 0.25);
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     Header band
+     ───────────────────────────────────────── */
+  .header {
+    flex: 0 0 auto;
+    padding: clamp(20px, 3.5vh, 36px) clamp(24px, 5vw, 48px) clamp(12px, 2vh, 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .header .brand {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: var(--fs-xl);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--terracotta-dark);
+    line-height: 1;
+  }
+
+  .header .tag {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: var(--fs-sm);
+    font-style: italic;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  /* Step indicator */
+  .steps {
+    display: flex;
+    gap: 6px;
+    margin-top: clamp(10px, 1.5vh, 16px);
+  }
+
+  .step-dot {
+    flex: 1;
+    height: 3px;
+    background: var(--line);
+    border-radius: 2px;
+    transition: background 0.35s ease;
+  }
+
+  .step-dot.active {
+    background: var(--terracotta);
+  }
+
+  /* ─────────────────────────────────────────
+     Main content area
+     ───────────────────────────────────────── */
+  .content {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: clamp(8px, 1.5vh, 16px) clamp(24px, 5vw, 48px) clamp(20px, 3vh, 32px);
+  }
+
+  .content h1 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-weight: 500;
+    font-size: var(--fs-display);
+    color: var(--terracotta-dark);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: clamp(8px, 2vh, 24px) 0 clamp(16px, 2.5vh, 28px);
+  }
+
+  .content h2 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-weight: 500;
+    font-size: var(--fs-xl);
+    color: var(--terracotta-dark);
+    margin: clamp(8px, 2vh, 16px) 0 clamp(12px, 2vh, 20px);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  .content h3 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-weight: 600;
+    font-size: var(--fs-lg);
+    color: var(--terracotta);
+    margin: 0 0 clamp(8px, 1.2vh, 12px);
+  }
+
+  .content p {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: var(--fs-md);
+    line-height: 1.45;
+    color: var(--dark);
+    margin: 0 0 clamp(12px, 1.8vh, 18px);
+  }
+
+  .content p.lead {
+    font-size: var(--fs-lg);
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  .content em.accent {
+    font-style: italic;
+    color: var(--terracotta-dark);
+  }
+
+  /* Two-purpose explanation cards */
+  .purpose {
+    background: var(--cream);
+    border-radius: 14px;
+    padding: clamp(14px, 2vh, 20px) clamp(16px, 2.5vh, 22px);
+    margin-bottom: clamp(10px, 1.5vh, 14px);
+    border-left: 3px solid var(--terracotta);
+  }
+
+  .purpose h3 {
+    margin-bottom: 6px;
+  }
+
+  .purpose p {
+    font-size: var(--fs-base);
+    margin: 0;
+  }
+
+  /* Consent options */
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 1.5vh, 14px);
+    margin: clamp(16px, 2.5vh, 24px) 0 clamp(20px, 3vh, 28px);
+  }
+
+  .option {
+    background: var(--cream);
+    border-radius: 14px;
+    padding: clamp(14px, 2vh, 18px) clamp(16px, 2.5vh, 20px);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(12px, 2vw, 16px);
+    border: 2px solid transparent;
+    user-select: none;
+  }
+
+  .option:hover {
+    background: var(--sand);
+  }
+
+  .option.selected {
+    background: var(--sand);
+    border-color: var(--terracotta);
+  }
+
+  .option .checkbox {
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 2px solid var(--soft-muted);
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    margin-top: 2px;
+  }
+
+  .option.selected .checkbox {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+  }
+
+  .option .checkbox svg {
+    width: 14px;
+    height: 14px;
+    color: white;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.2s ease;
+  }
+
+  .option.selected .checkbox svg {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .option .opt-content {
+    flex: 1;
+  }
+
+  .option .opt-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: var(--fs-md);
+    color: var(--terracotta-dark);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .option .opt-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--fs-base);
+    color: var(--dark);
+    line-height: 1.35;
+  }
+
+  /* No-thanks option styling */
+  .option.refuse {
+    border-left: 3px solid var(--soft-muted);
+  }
+
+  .option.refuse .opt-title {
+    color: var(--muted);
+  }
+
+  /* ─────────────────────────────────────────
+     Question form
+     ───────────────────────────────────────── */
+  .question-block {
+    margin-bottom: clamp(20px, 3vh, 28px);
+  }
+
+  .question-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--terracotta-dark);
+    color: white;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: var(--fs-base);
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  .question-block label.q {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--fs-md);
+    font-weight: 600;
+    color: var(--terracotta-dark);
+    line-height: 1.3;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .question-block .q-hint {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--fs-sm);
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.4;
+    margin: 0 0 10px 38px;
+  }
+
+  .question-block textarea {
+    width: 100%;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: clamp(10px, 1.6vh, 14px) clamp(12px, 2vh, 16px);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--fs-base);
+    color: var(--dark);
+    line-height: 1.4;
+    min-height: clamp(70px, 11vh, 100px);
+    resize: vertical;
+    transition: border-color 0.2s ease;
+    -webkit-appearance: none;
+  }
+
+  .question-block textarea:focus {
+    outline: none;
+    border-color: var(--terracotta);
+  }
+
+  /* Final summary */
+  .rights {
+    background: var(--cream);
+    border-radius: 14px;
+    padding: clamp(16px, 2.5vh, 22px);
+    margin-top: clamp(16px, 2.5vh, 24px);
+  }
+
+  .rights h3 {
+    font-size: var(--fs-md);
+    margin-bottom: 10px;
+  }
+
+  .rights ul {
+    margin: 0;
+    padding-left: 18px;
+    list-style: none;
+  }
+
+  .rights li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--fs-sm);
+    line-height: 1.45;
+    color: var(--dark);
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 16px;
+  }
+
+  .rights li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--terracotta);
+    font-weight: 500;
+  }
+
+  .rights p.fine {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--fs-xs);
+    color: var(--soft-muted);
+    margin-top: 12px;
+    line-height: 1.4;
+    font-style: italic;
+  }
+
+  /* Final completion screen — center everything */
+  .completion {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: clamp(24px, 4vh, 48px);
+    gap: clamp(16px, 3vh, 32px);
+  }
+
+  .completion .candle {
+    width: clamp(48px, 8vh, 80px);
+    height: clamp(48px, 8vh, 80px);
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 40%, #FFD27A 0%, var(--terracotta) 60%, var(--terracotta-dark) 100%);
+    box-shadow: 0 0 0 8px rgba(184, 80, 66, 0.10), 0 0 0 18px rgba(184, 80, 66, 0.04);
+    margin-bottom: clamp(8px, 2vh, 16px);
+    animation: pulse 3.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.04); opacity: 0.92; }
+  }
+
+  .completion h1 {
+    margin: 0;
+    font-size: var(--fs-display);
+  }
+
+  .completion p {
+    max-width: 480px;
+    font-size: var(--fs-md);
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .completion .closing-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: var(--fs-lg);
+    color: var(--terracotta-dark);
+    line-height: 1.4;
+    max-width: 460px;
+    margin-top: clamp(8px, 1.5vh, 16px);
+    border-top: 1px solid var(--line);
+    padding-top: clamp(16px, 2.5vh, 24px);
+  }
+
+  /* ─────────────────────────────────────────
+     Footer + buttons
+     ───────────────────────────────────────── */
+  .footer {
+    flex: 0 0 auto;
+    padding: clamp(14px, 2vh, 20px) clamp(24px, 5vw, 48px) clamp(20px, 3vh, 32px);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid var(--line);
+    background: var(--pale);
+  }
+
+  .button-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: clamp(12px, 2vh, 16px) clamp(16px, 3vw, 24px);
+    border-radius: 999px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--fs-base);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    -webkit-appearance: none;
+    text-align: center;
+    user-select: none;
+    line-height: 1.2;
+  }
+
+  .btn:active {
+    transform: scale(0.97);
+  }
+
+  .btn.primary {
+    background: var(--terracotta-dark);
+    color: white;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .btn.primary:hover {
+    background: var(--terracotta-darker);
+  }
+
+  .btn.primary:disabled {
+    background: var(--soft-muted);
+    color: var(--cream);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .btn.secondary {
+    background: var(--cream);
+    color: var(--terracotta-dark);
+    border: 1px solid var(--line);
+  }
+
+  .btn.secondary:hover {
+    background: var(--sand);
+  }
+
+  .btn.ghost {
+    background: transparent;
+    color: var(--muted);
+    border: none;
+  }
+
+  .btn.ghost:hover {
+    color: var(--terracotta-dark);
+  }
+
+  /* On narrower screens, stack buttons full-width */
+  @media (max-width: 480px) {
+    .button-row {
+      flex-direction: column;
+      gap: 8px;
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     Screen transitions
+     ───────────────────────────────────────── */
+  .screen-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hide scrollbars but keep scrolling */
+  .content::-webkit-scrollbar { width: 4px; }
+  .content::-webkit-scrollbar-track { background: transparent; }
+  .content::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
+
+  /* Refuse-only screen styling */
+  .refuse-screen {
+    text-align: center;
+    padding: clamp(24px, 5vh, 48px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(12px, 2vh, 20px);
+  }
+  .refuse-screen p {
+    max-width: 460px;
+    color: var(--muted);
+  }
 </style>
 </head>
 <body>
 
-<div class="po" id="pO"><div class="pb"><h3 id="pT">Privacy Policy</h3><div id="pC"></div><button class="bt bt1 bfw" onclick="cP()" style="margin-top:16px"><span data-t="privacyClose">Close</span></button></div></div>
-
-<div class="phone" id="app">
-<div class="hdr">
-<div class="ltg"><button class="on" id="bEN" onclick="sL('en')">EN</button><button id="bIT" onclick="sL('it')">IT</button></div>
-<h1>YODA</h1>
-<p data-t="headerSub">Your experience is someone else's cure</p>
-</div>
-
-<!-- LANDING -->
-<div class="scr on fade-in" id="s-land">
-<div class="hr">
-<svg class="hi" style="top:20px;left:30px" width="80" height="80" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="20" r="12" stroke="#B85042" stroke-width="2.5"/><path d="M12 56c0-11 9-20 20-20s20 9 20 20" stroke="#B85042" stroke-width="2.5" stroke-linecap="round"/></svg>
-<svg class="hi" style="bottom:20px;right:30px" width="80" height="80" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="22" r="11" stroke="#7A9E7E" stroke-width="2.5"/><path d="M14 56c0-10 8-18 18-18s18 8 18 18" stroke="#7A9E7E" stroke-width="2.5" stroke-linecap="round"/></svg>
-<div><div style="font-family:'DM Serif Display';font-size:22px;color:var(--charcoal);text-align:center;position:relative;z-index:1;margin-bottom:8px" data-t="heroTitle">Intergenerational<br>Mentorship Program</div><div class="cen"><span style="font-size:13px;color:var(--warm-gray);background:rgba(255,255,255,.7);border-radius:20px;padding:6px 16px;display:inline-block;position:relative;z-index:1" data-t="heroBadge">Connecting experience with hope</span></div></div>
-</div>
-<p style="font-size:15px;color:var(--warm-gray);line-height:1.75;margin-bottom:28px" data-t="landingDesc">YODA transforms hospital waiting time into a space of human connection. Experienced patients volunteer as mentors for those facing similar journeys — sharing their story, reducing anxiety, and finding renewed purpose.</p>
-<div class="fg">
-<div class="fc"><div class="fe">🤝</div><div class="fl" data-t="f1l">Voluntary</div><div class="fd" data-t="f1d">Join freely, leave anytime</div></div>
-<div class="fc"><div class="fe">📱</div><div class="fl" data-t="f2l">Simple</div><div class="fd" data-t="f2d">Register in 2 minutes</div></div>
-<div class="fc"><div class="fe">🏥</div><div class="fl" data-t="f3l">In-hospital</div><div class="fd" data-t="f3d">Meet during your visit</div></div>
-<div class="fc"><div class="fe">💬</div><div class="fl" data-t="f4l">Personal</div><div class="fd" data-t="f4d">Matched to your needs</div></div>
-</div>
-<button class="bt bt1 bfw" onclick="go('role')" data-t="joinBtn">Join the YODA Program</button>
-<div class="dn" data-t="deskNote">Also available at the dedicated desk · Entrance Area, Ground Floor</div>
-</div>
-
-<!-- ROLE -->
-<div class="scr" id="s-role">
-<h2 class="cen" data-t="roleTitle">Choose your role</h2>
-<p class="sub cen" data-t="roleSub">How would you like to participate?</p>
-<div class="rc" onclick="pR('mentor')"><div class="ab" style="background:var(--terracotta)"></div><div class="ci"><div class="ri" style="background:rgba(184,80,66,.08)"><svg width="36" height="36" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="20" r="12" stroke="#B85042" stroke-width="2.5"/><path d="M12 56c0-11 9-20 20-20s20 9 20 20" stroke="#B85042" stroke-width="2.5" stroke-linecap="round"/><circle cx="48" cy="44" r="8" stroke="#B85042" stroke-width="2"/><path d="M48 40v8M44 44h8" stroke="#B85042" stroke-width="2" stroke-linecap="round"/></svg></div><div><div class="rt">Mentor</div><div class="rd" data-t="mentorDesc">You have been through treatments and procedures. Share your experience with someone who needs guidance and reassurance.</div><div class="rct" style="color:var(--terracotta)" data-t="mentorCta">I want to help →</div></div></div></div>
-<div class="rc" onclick="pR('mentee')"><div class="ab" style="background:var(--sage)"></div><div class="ci"><div class="ri" style="background:rgba(122,158,126,.08)"><svg width="36" height="36" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="22" r="11" stroke="#7A9E7E" stroke-width="2.5"/><path d="M14 56c0-10 8-18 18-18s18 8 18 18" stroke="#7A9E7E" stroke-width="2.5" stroke-linecap="round"/><path d="M44 14c3-3 8-3 8 2s-8 6-8 6-8-1-8-6 5-5 8-2z" fill="#7A9E7E" opacity=".25"/></svg></div><div><div class="rt">Mentee</div><div class="rd" data-t="menteeDesc">You are facing a medical journey and would like to speak with someone who has already been through it.</div><div class="rct" style="color:var(--sage)" data-t="menteeCta">I need support →</div></div></div></div>
-<div class="cen" style="margin-top:8px"><button class="bt bt3" onclick="go('land')" data-t="back">← Back</button></div>
-</div>
-
-<!-- M1 -->
-<div class="scr" id="s-m1">
-<div class="dots"><div class="dot on"></div><div class="dot"></div></div>
-<h2 data-t="personalInfo">Personal information</h2><p class="sub" data-t="tellUs">Tell us about yourself</p>
-<div class="fld"><label data-t="firstName">First name <span class="rq">*</span></label><input id="mn" placeholder="e.g. Giovanni"></div>
-<div class="fld"><label data-t="lastName">Last name <span class="rq">*</span></label><input id="ms" placeholder="e.g. Rossi"></div>
-<div class="fld"><label data-t="age">Age <span class="rq">*</span></label><input id="ma" type="number" placeholder="e.g. 72"></div>
-<div class="fld"><label data-t="phone">Phone <span class="rq">*</span></label><input id="mp" type="tel" placeholder="+39 ..."></div>
-<div class="fld"><label data-t="areaExp">Area of experience <span class="rq">*</span></label><select id="md"><option value="" disabled selected data-t="selDept">Which department?</option><option>Cardiology</option><option>Orthopedics</option><option>Oncology</option><option>General Surgery</option><option>Neurology</option><option>Other</option></select></div>
-<div class="brow"><button class="bt bt3" onclick="go('role')" data-t="back">← Back</button><button class="bt bt1 bgr" onclick="go('m2')" data-t="continue">Continue →</button></div>
-</div>
-
-<!-- M2 -->
-<div class="scr" id="s-m2">
-<div class="dots"><div class="dot on"></div><div class="dot on"></div></div>
-<h2 data-t="availability">Your availability</h2><p class="sub" data-t="whenAvail">When are you available for a conversation?</p>
-<div class="fld"><label data-t="availDays">Available days</label><div class="dr"><button class="db" onclick="this.classList.toggle('on')">Mon</button><button class="db" onclick="this.classList.toggle('on')">Tue</button><button class="db" onclick="this.classList.toggle('on')">Wed</button><button class="db" onclick="this.classList.toggle('on')">Thu</button><button class="db" onclick="this.classList.toggle('on')">Fri</button></div></div>
-<div class="fld"><label data-t="timeSlots">Preferred time slots</label><div class="sr"><button class="sb" onclick="this.classList.toggle('on')">8–10</button><button class="sb" onclick="this.classList.toggle('on')">10–12</button><button class="sb" onclick="this.classList.toggle('on')">12–14</button><button class="sb" onclick="this.classList.toggle('on')">14–16</button><button class="sb" onclick="this.classList.toggle('on')">16–18</button></div></div>
-<div class="ib ibt" data-t="mentorInfo"><strong>How it works:</strong> When a mentee matches your availability, you will receive an SMS. You can accept or decline with a simple reply.</div>
-<div class="ck" onclick="tC(1)"><div class="cb" id="c1"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="cl" data-t="privLabel">I have read and accept the <a onclick="event.stopPropagation();oP()">Privacy Policy</a> and consent to the processing of my personal data for the YODA program.</div></div>
-<div class="brow"><button class="bt bt3" onclick="go('m1')" data-t="back">← Back</button><button class="bt bt1 bgr" onclick="sub('mentor')" data-t="complete">Complete registration</button></div>
-</div>
-
-<!-- E1 -->
-<div class="scr" id="s-e1">
-<div class="dots"><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div>
-<h2 data-t="personalInfo">Personal information</h2><p class="sub" data-t="tellUs">Tell us about yourself</p>
-<div class="fld"><label data-t="firstName">First name <span class="rq">*</span></label><input id="en" placeholder="e.g. Giulia"></div>
-<div class="fld"><label data-t="lastName">Last name <span class="rq">*</span></label><input id="es" placeholder="e.g. Bianchi"></div>
-<div class="fld"><label data-t="age">Age <span class="rq">*</span></label><input id="ea" type="number" placeholder="e.g. 34"></div>
-<div class="fld"><label data-t="phone">Phone <span class="rq">*</span></label><input id="ep" type="tel" placeholder="+39 ..."></div>
-<div class="brow"><button class="bt bt3" onclick="go('role')" data-t="back">← Back</button><button class="bt bt2 bgr" onclick="go('e2')" data-t="continue">Continue →</button></div>
-</div>
-
-<!-- E2 -->
-<div class="scr" id="s-e2">
-<div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div>
-<h2 data-t="appointment">Your appointment</h2><p class="sub" data-t="matchMentor">We will match you with a mentor available at your visit time</p>
-<div class="fld"><label data-t="appDate">Appointment date <span class="rq">*</span></label><input id="ed" type="date"></div>
-<div class="fld"><label data-t="appTime">Appointment time <span class="rq">*</span></label><select id="et"><option value="" disabled selected data-t="selTime">Select time...</option><option>08:00</option><option>09:00</option><option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option></select></div>
-<div class="fld"><label data-t="department">Department <span class="rq">*</span></label><select id="edp"><option value="" disabled selected data-t="selDept">Which department?</option><option>Cardiology</option><option>Orthopedics</option><option>Oncology</option><option>General Surgery</option><option>Neurology</option><option>Other</option></select></div>
-<div class="ib ibs" data-t="menteeInfo"><strong>Tip:</strong> We suggest arriving 30 minutes before your appointment for a meaningful conversation with your mentor.</div>
-<div class="brow"><button class="bt bt3" onclick="go('e1')" data-t="back">← Back</button><button class="bt bt2 bgr" onclick="go('e3')" data-t="continue">Continue →</button></div>
-</div>
-
-<!-- E3 -->
-<div class="scr" id="s-e3">
-<div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div>
-<h2 data-t="preferences">Your preferences</h2><p class="sub" data-t="findMentor">Help us find the right mentor for you</p>
-<div class="fld"><label data-t="ageGap">Preferred age gap <span class="rq">*</span></label><select><option value="" disabled selected data-t="selPref">Select preference...</option><option data-t="gN">No preference</option><option data-t="gC">Close to my age (±10 years)</option><option data-t="gS">Senior mentor (60+)</option><option data-t="gA">Any age</option></select></div>
-<div class="fld"><label data-t="supportType">Type of support <span class="rq">*</span></label><select><option value="" disabled selected data-t="supW">What do you need most?</option><option data-t="supP">Practical advice</option><option data-t="supE">Emotional support</option><option data-t="supB">Both practical and emotional</option></select></div>
-<div class="fld"><label data-t="notes">Anything else?</label><textarea rows="3" placeholder="e.g. This is my first surgery..."></textarea></div>
-<div class="ib ibn" data-t="volNote">Participation is <strong>completely voluntary</strong>. Cancel anytime by replying to the SMS.</div>
-<div class="ck" onclick="tC(2)"><div class="cb" id="c2"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="cl" data-t="privLabel">I have read and accept the <a onclick="event.stopPropagation();oP()">Privacy Policy</a> and consent to the processing of my personal data for the YODA program.</div></div>
-<div class="brow"><button class="bt bt3" onclick="go('e2')" data-t="back">← Back</button><button class="bt bt2 bgr" onclick="sub('mentee')" data-t="complete">Complete registration</button></div>
-</div>
-
-<!-- SUCCESS -->
-<div class="scr" id="s-ok"><div class="sw">
-<svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="36" fill="rgba(184,80,66,.1)"/><circle cx="40" cy="40" r="36" stroke="#B85042" stroke-width="2.5" fill="none"/><path d="M24 40l10 10 22-22" stroke="#B85042" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="50" style="animation:checkmark .6s ease .3s forwards;stroke-dashoffset:50"/></svg>
-<h2 id="okT">Welcome to YODA</h2>
-<p id="okM"></p>
-<div class="smb"><div class="smi" style="background:rgba(184,80,66,.12)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="#B85042" stroke-width="1.5"/></svg></div><div><div style="font-size:12px;color:var(--warm-gray);margin-bottom:2px;text-align:left" data-t="smsLabel">Notifications via SMS to</div><div style="font-size:15px;font-weight:600;color:var(--charcoal);text-align:left">+39 ••• ••• ••48</div></div></div>
-</div></div>
-
-<div class="ft">General Hospital · Patient Care Foundation · Volunteer Support</div>
+<div class="app">
+  <div class="screen" id="screen">
+    <!-- Screen content rendered by JS -->
+  </div>
 </div>
 
 <script>
-const L={en:{headerSub:"Your experience is someone else's cure",heroTitle:"Intergenerational<br>Mentorship Program",heroBadge:"Connecting experience with hope",landingDesc:"YODA transforms hospital waiting time into a space of human connection. Experienced patients volunteer as mentors for those facing similar journeys — sharing their story, reducing anxiety, and finding renewed purpose.",f1l:"Voluntary",f1d:"Join freely, leave anytime",f2l:"Simple",f2d:"Register in 2 minutes",f3l:"In-hospital",f3d:"Meet during your visit",f4l:"Personal",f4d:"Matched to your needs",joinBtn:"Join the YODA Program",deskNote:"Also available at the dedicated desk · Entrance Area, Ground Floor",roleTitle:"Choose your role",roleSub:"How would you like to participate?",mentorDesc:"You have been through treatments and procedures. Share your experience with someone who needs guidance and reassurance.",mentorCta:"I want to help →",menteeDesc:"You are facing a medical journey and would like to speak with someone who has already been through it. Find comfort in shared experience.",menteeCta:"I need support →",back:"← Back","continue":"Continue →",complete:"Complete registration",personalInfo:"Personal information",tellUs:"Tell us about yourself",firstName:"First name <span class='rq'>*</span>",lastName:"Last name <span class='rq'>*</span>",age:"Age <span class='rq'>*</span>",phone:"Phone <span class='rq'>*</span>",areaExp:"Area of experience <span class='rq'>*</span>",selDept:"Which department?",availability:"Your availability",whenAvail:"When are you available for a conversation?",availDays:"Available days",timeSlots:"Preferred time slots",mentorInfo:"<strong>How it works:</strong> When a mentee matches your availability, you will receive an SMS. You can accept or decline with a simple reply.",appointment:"Your appointment",matchMentor:"We will match you with a mentor available at your visit time",appDate:"Appointment date <span class='rq'>*</span>",appTime:"Appointment time <span class='rq'>*</span>",selTime:"Select time...",department:"Department <span class='rq'>*</span>",menteeInfo:"<strong>Tip:</strong> We suggest arriving 30 minutes before your appointment for a meaningful conversation with your mentor.",preferences:"Your preferences",findMentor:"Help us find the right mentor for you",ageGap:"Preferred age gap <span class='rq'>*</span>",selPref:"Select preference...",gN:"No preference",gC:"Close to my age (±10 years)",gS:"Senior mentor (60+)",gA:"Any age",supportType:"Type of support <span class='rq'>*</span>",supW:"What do you need most?",supP:"Practical advice (procedures, recovery, logistics)",supE:"Emotional support (anxiety, fears, reassurance)",supB:"Both practical and emotional",notes:"Anything else?",volNote:"Participation is <strong>completely voluntary</strong>. Cancel anytime by replying to the SMS.",privLabel:'I have read and accept the <a onclick="event.stopPropagation();oP()">Privacy Policy</a> and consent to the processing of my personal data for the YODA program.',smsLabel:"Notifications via SMS to",privacyClose:"Close",sMentor:"Your registration as a mentor is confirmed. You will receive an SMS when a mentee matches your availability. Thank you for sharing your experience.",sMentee:"Your registration as a mentee is confirmed. We will match you with a mentor based on your preferences. You will receive an SMS with the details.",pTitle:"Privacy Policy — YODA Program",pH:'<p>This document describes how personal data collected through the YODA Program is processed, in compliance with Regulation (EU) 2016/679 (GDPR).</p><div class="st">1. Data Controller</div><p>General Hospital Foundation, Via della Salute 1, 20100 Milano (MI) — PEC: privacy@pec.generalhospital.it</p><div class="st">2. Data Collected</div><p>First name, last name, age, phone number, department of interest, availability, and voluntary notes. No clinical or sensitive health data is collected.</p><div class="st">3. Purpose</div><p>Data is used exclusively for: (a) matching mentors with mentees; (b) SMS notifications; (c) service improvement. No marketing or profiling.</p><div class="st">4. Legal Basis</div><p>Explicit consent (Art. 6(1)(a) GDPR), withdrawable at any time.</p><div class="st">5. Retention</div><p>Data is kept for the duration of participation and deleted within 30 days of withdrawal.</p><div class="st">6. Sharing</div><p>First name and experience area may be shared with your match. No third-party sharing or transfers outside EU/EEA.</p><div class="st">7. Your Rights</div><p>Access, rectify, erase, restrict, port, or object. Contact: dpo@generalhospital.it</p><div class="st">8. Withdrawal</div><p>Reply STOP to any SMS or visit the service desk. No explanation required. Data deleted within 30 days.</p>'},it:{headerSub:"La tua esperienza è la cura di qualcun altro",heroTitle:"Programma di Mentorship<br>Intergenerazionale",heroBadge:"Connettere esperienza e speranza",landingDesc:"YODA trasforma l'attesa in ospedale in uno spazio di connessione umana. Pazienti con esperienza diventano mentori volontari per chi affronta percorsi simili — condividendo la propria storia, riducendo l'ansia e ritrovando uno scopo.",f1l:"Volontario",f1d:"Partecipa liberamente",f2l:"Semplice",f2d:"Registrazione in 2 minuti",f3l:"In ospedale",f3d:"Incontri durante la visita",f4l:"Personale",f4d:"Abbinamento su misura",joinBtn:"Partecipa al Programma YODA",deskNote:"Disponibile anche allo sportello · Area Ingresso, Piano Terra",roleTitle:"Scegli il tuo ruolo",roleSub:"Come vorresti partecipare?",mentorDesc:"Hai già affrontato terapie e procedure. Condividi la tua esperienza con chi ha bisogno di guida e rassicurazione.",mentorCta:"Voglio aiutare →",menteeDesc:"Stai affrontando un percorso medico e vorresti parlare con qualcuno che ci è già passato. Trova conforto nell'esperienza condivisa.",menteeCta:"Ho bisogno di supporto →",back:"← Indietro","continue":"Continua →",complete:"Completa registrazione",personalInfo:"Informazioni personali",tellUs:"Parlaci di te",firstName:"Nome <span class='rq'>*</span>",lastName:"Cognome <span class='rq'>*</span>",age:"Età <span class='rq'>*</span>",phone:"Telefono <span class='rq'>*</span>",areaExp:"Area di esperienza <span class='rq'>*</span>",selDept:"Quale reparto?",availability:"La tua disponibilità",whenAvail:"Quando sei disponibile per una conversazione?",availDays:"Giorni disponibili",timeSlots:"Fasce orarie preferite",mentorInfo:"<strong>Come funziona:</strong> Quando un mentee corrisponde alla tua disponibilità, riceverai un SMS. Puoi accettare o rifiutare con una semplice risposta.",appointment:"Il tuo appuntamento",matchMentor:"Ti abbineremo a un mentore disponibile all'orario della tua visita",appDate:"Data appuntamento <span class='rq'>*</span>",appTime:"Orario <span class='rq'>*</span>",selTime:"Seleziona orario...",department:"Reparto <span class='rq'>*</span>",menteeInfo:"<strong>Consiglio:</strong> Arriva 30 minuti prima dell'appuntamento per una conversazione significativa con il tuo mentore.",preferences:"Le tue preferenze",findMentor:"Aiutaci a trovare il mentore giusto",ageGap:"Differenza di età <span class='rq'>*</span>",selPref:"Seleziona...",gN:"Nessuna preferenza",gC:"Vicino alla mia età (±10 anni)",gS:"Mentore senior (60+)",gA:"Qualsiasi età",supportType:"Tipo di supporto <span class='rq'>*</span>",supW:"Di cosa hai più bisogno?",supP:"Consigli pratici (procedure, recupero)",supE:"Supporto emotivo (ansia, paure)",supB:"Sia pratico che emotivo",notes:"Altro da comunicarci?",volNote:"La partecipazione è <strong>completamente volontaria</strong>. Annulla in qualsiasi momento rispondendo all'SMS.",privLabel:'Ho letto e accetto l\'<a onclick="event.stopPropagation();oP()">Informativa Privacy</a> e acconsento al trattamento dei miei dati per il programma YODA.',smsLabel:"Notifiche SMS al numero",privacyClose:"Chiudi",sMentor:"La tua registrazione come mentore è confermata. Riceverai un SMS quando un mentee corrisponderà alla tua disponibilità. Grazie per condividere la tua esperienza.",sMentee:"La tua registrazione come mentee è confermata. Ti abbineremo a un mentore in base alle tue preferenze. Riceverai un SMS con i dettagli.",pTitle:"Informativa Privacy — Programma YODA",pH:'<p>Modalità di trattamento dei dati raccolti tramite il Programma YODA, ai sensi del Reg. (UE) 2016/679 (GDPR).</p><div class="st">1. Titolare</div><p>Fondazione General Hospital, Via della Salute 1, 20100 Milano — PEC: privacy@pec.generalhospital.it</p><div class="st">2. Dati Raccolti</div><p>Nome, cognome, età, telefono, reparto, disponibilità, note volontarie. Nessun dato clinico o sensibile.</p><div class="st">3. Finalità</div><p>Esclusivamente per: (a) abbinamento mentor-mentee; (b) notifiche SMS; (c) miglioramento del servizio. Nessun marketing o profilazione.</p><div class="st">4. Base Giuridica</div><p>Consenso esplicito (Art. 6(1)(a) GDPR), revocabile in qualsiasi momento.</p><div class="st">5. Conservazione</div><p>Per la durata della partecipazione, cancellazione entro 30 giorni dalla revoca.</p><div class="st">6. Comunicazione</div><p>Nome e area di esperienza condivisi solo con il match. Nessun trasferimento extra-UE.</p><div class="st">7. Diritti</div><p>Accesso, rettifica, cancellazione, limitazione, portabilità, opposizione. Contatto: dpo@generalhospital.it</p><div class="st">8. Revoca</div><p>Rispondi STOP a qualsiasi SMS o recati allo sportello. Dati cancellati entro 30 giorni.</p>'}};
-let ln='en',rl=null,ck=[false,false];
-function sL(l){ln=l;document.getElementById('bEN').classList.toggle('on',l==='en');document.getElementById('bIT').classList.toggle('on',l==='it');document.querySelectorAll('[data-t]').forEach(e=>{const k=e.getAttribute('data-t');if(L[l][k])e.innerHTML=L[l][k]})}
-function go(s){document.querySelectorAll('.scr').forEach(x=>x.classList.remove('on'));const t=document.getElementById('s-'+s);t.classList.add('on');t.classList.remove('fade-in');void t.offsetWidth;t.classList.add('fade-in');document.querySelector('.phone').scrollTo({top:0,behavior:'smooth'})}
-function pR(r){rl=r;go(r==='mentor'?'m1':'e1')}
-function tC(n){ck[n-1]=!ck[n-1];document.getElementById('c'+n).classList.toggle('on',ck[n-1])}
-function oP(){document.getElementById('pT').textContent=L[ln].pTitle;document.getElementById('pC').innerHTML=L[ln].pH;document.getElementById('pO').classList.add('on')}
-function cP(){document.getElementById('pO').classList.remove('on')}
-function sub(t){const c=t==='mentor'?ck[0]:ck[1];if(!c){alert(ln==='en'?'Please accept the Privacy Policy.':'Accetta l\'Informativa Privacy.');return}const n=t==='mentor'?document.getElementById('mn').value:document.getElementById('en').value;document.getElementById('okT').textContent=(ln==='en'?'Welcome to YODA':'Benvenuto in YODA')+(n?', '+n:'');document.getElementById('okM').textContent=t==='mentor'?L[ln].sMentor:L[ln].sMentee;go('ok')}
+  // ─────────────────────────────────────────
+  //  YODA prototype — 5-screen consent flow
+  //  No backend, state held in memory only.
+  // ─────────────────────────────────────────
+  const TOTAL_STEPS = 5;
+  let state = {
+    currentScreen: 1,
+    consent: {
+      knowAsPerson: false,
+      possibleMatch: false,
+      refused: false
+    },
+    answers: { q1: '', q2: '', q3: '', q4: '' }
+  };
+
+  const screenEl = document.getElementById('screen');
+
+  // ─────────── Render dispatcher ───────────
+  function render() {
+    const html = renderScreen(state.currentScreen);
+    screenEl.innerHTML = html;
+    attachHandlers();
+  }
+
+  function renderScreen(n) {
+    // Special case: refused → terminal short screen
+    if (state.consent.refused && n === 5) {
+      return refusedScreen();
+    }
+
+    return `
+      ${renderHeader(n)}
+      <div class="content"><div class="screen-content">
+        ${screenBody(n)}
+      </div></div>
+      ${renderFooter(n)}
+    `;
+  }
+
+  // ─────────── Header ───────────
+  function renderHeader(n) {
+    const dots = Array.from({ length: TOTAL_STEPS }, (_, i) =>
+      `<div class="step-dot ${i < n ? 'active' : ''}"></div>`
+    ).join('');
+
+    return `
+      <div class="header">
+        <div class="brand">YODA</div>
+        <div class="tag">Where life stories meet care</div>
+        <div class="steps">${dots}</div>
+      </div>
+    `;
+  }
+
+  // ─────────── Body per screen ───────────
+  function screenBody(n) {
+    switch (n) {
+      case 1: return body1();
+      case 2: return body2();
+      case 3: return body3();
+      case 4: return body4();
+      case 5: return body5();
+    }
+  }
+
+  function body1() {
+    return `
+      <h1>Welcome.</h1>
+      <p class="lead">While you are here, our doctors and nurses will take care of your body. We do this every day, with the best of our skill.</p>
+      <p>But you are more than your diagnosis. You have a story, a craft, things you love, things you can still give to others.</p>
+      <p>If you wish, we would like to know you a little better — <em class="accent">as a person, not only as a patient</em>.</p>
+      <p>What follows are four short questions. They are not medical. They are not required. You can answer them all, some of them, or none of them.</p>
+      <p style="color: var(--muted); font-style: italic;">The questions take about ten minutes. You can do them now, later, or never.</p>
+    `;
+  }
+
+  function body2() {
+    return `
+      <h2>Why we ask.</h2>
+      <p>Your answers help us in two ways. You can choose to allow one, both, or neither.</p>
+
+      <div class="purpose">
+        <h3>To know you as a person.</h3>
+        <p>Your story stays in your hospital record, visible only to the staff caring for you. It changes nothing about your treatment. It changes how we look at you while we treat you.</p>
+      </div>
+
+      <div class="purpose">
+        <h3>To connect you with someone.</h3>
+        <p>If your interests, experiences, or knowledge match those of another patient or a member of our staff, we may ask you whether you would like to meet them. The encounter would happen only with your explicit agreement, in a common space, at a time you choose. You may always say no.</p>
+      </div>
+
+      <p style="color: var(--muted); font-style: italic; font-size: var(--fs-sm); margin-top: clamp(12px, 2vh, 18px);">You can change your mind at any moment, and your story can be erased from our system whenever you ask.</p>
+    `;
+  }
+
+  function body3() {
+    const c = state.consent;
+    return `
+      <h2>Your choices.</h2>
+      <p>Please tell us how you would like your story to be used.</p>
+
+      <div class="options">
+        <div class="option ${c.knowAsPerson ? 'selected' : ''}" data-key="knowAsPerson">
+          <div class="checkbox">${checkSvg()}</div>
+          <div class="opt-content">
+            <div class="opt-title">Yes — to know me as a person</div>
+            <div class="opt-desc">I allow my answers to be visible to the staff caring for me, so they can see me beyond my diagnosis.</div>
+          </div>
+        </div>
+
+        <div class="option ${c.possibleMatch ? 'selected' : ''}" data-key="possibleMatch">
+          <div class="checkbox">${checkSvg()}</div>
+          <div class="opt-content">
+            <div class="opt-title">Yes — to be possibly connected with someone</div>
+            <div class="opt-desc">I allow my answers to be searchable across the hospital, so that staff may identify possible encounters with patients or staff who share my interests. I will be asked again before any encounter takes place.</div>
+          </div>
+        </div>
+
+        <div class="option refuse ${c.refused ? 'selected' : ''}" data-key="refused">
+          <div class="checkbox">${checkSvg()}</div>
+          <div class="opt-content">
+            <div class="opt-title">No, thank you.</div>
+            <div class="opt-desc">I prefer not to share my story. My choice will not affect the medical care I receive.</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="color: var(--muted); font-style: italic; font-size: var(--fs-sm);">You can change these choices at any moment during your stay, by asking any nurse or by tapping the YODA section in your patient app.</p>
+    `;
+  }
+
+  function body4() {
+    const a = state.answers;
+    return `
+      <h2>Four questions.</h2>
+      <p>Take your time. There are no right answers. You can write a little or a lot. You can leave any question blank.</p>
+
+      ${questionBlock(1, 'What did you do — your work, your craft, your role?',
+        'We are asking about what you spent your time on, what you were known for. This may be a profession, a trade, a role in your family or community.', a.q1, 'q1')}
+
+      ${questionBlock(2, 'What did you become good at, over the years?',
+        'Something you learned to do well. It does not have to be impressive to anyone else. It only has to be true.', a.q2, 'q2')}
+
+      ${questionBlock(3, 'What still moves you today?',
+        'Something that still makes your eyes light up. A passion, a curiosity, a memory you keep returning to.', a.q3, 'q3')}
+
+      ${questionBlock(4, 'What is something you could share with another person here?',
+        'A story, a skill, a piece of advice, a few minutes of conversation. Something you could offer, if someone wanted it.', a.q4, 'q4')}
+    `;
+  }
+
+  function questionBlock(num, q, hint, value, key) {
+    return `
+      <div class="question-block">
+        <label class="q"><span class="question-num">${num}</span>${q}</label>
+        <p class="q-hint">${hint}</p>
+        <textarea data-q="${key}" placeholder="Write here, if you wish…">${escapeHtml(value)}</textarea>
+      </div>
+    `;
+  }
+
+  function body5() {
+    return `
+      <div class="completion">
+        <div class="candle"></div>
+        <h1>Thank you.</h1>
+        <p>Your story has been saved. It will be treated with the same care as your medical information.</p>
+
+        <div class="closing-quote">
+          “It is like adding scent to a candle.<br>
+          The candle still gives light.<br>
+          But now the room feels different.”
+        </div>
+
+        <div class="rights" style="text-align: left; max-width: 480px; margin-top: clamp(20px, 3vh, 32px);">
+          <h3>Your rights.</h3>
+          <ul>
+            <li>You can read, edit, or erase your answers at any time.</li>
+            <li>You can withdraw your consent at any time, and your story will be removed from our system.</li>
+            <li>Your answers will never be used for purposes other than the ones you have agreed to.</li>
+            <li>When you leave the hospital, you will receive a copy of your answers, along with a small list of community organizations near you that match what you shared.</li>
+          </ul>
+          <p class="fine">If you have any questions about how your information is used, you can ask any nurse, or contact our Data Protection Officer at the number printed on your admission documents.</p>
+        </div>
+      </div>
+    `;
+  }
+
+  function refusedScreen() {
+    return `
+      ${renderHeader(5)}
+      <div class="content"><div class="screen-content">
+        <div class="refuse-screen">
+          <div class="candle" style="background: radial-gradient(circle at 50% 40%, #d8c8b0 0%, var(--soft-muted) 60%, var(--muted) 100%);"></div>
+          <h1>Thank you.</h1>
+          <p>We respect your choice. Your medical care will continue exactly as planned, with the same attention and excellence.</p>
+          <p style="font-style: italic; color: var(--terracotta-dark);">If you change your mind during your stay, you can speak with any nurse — the door is always open.</p>
+        </div>
+      </div></div>
+      <div class="footer">
+        <div class="button-row">
+          <button class="btn primary" onclick="reset()">Done</button>
+        </div>
+      </div>
+    `;
+  }
+
+  // ─────────── Footer ───────────
+  function renderFooter(n) {
+    if (n === 1) {
+      return `
+        <div class="footer">
+          <div class="button-row">
+            <button class="btn primary" onclick="next()">Continue</button>
+            <button class="btn secondary" onclick="next()">Maybe later</button>
+            <button class="btn ghost" onclick="goRefuse()">Not interested</button>
+          </div>
+        </div>
+      `;
+    }
+    if (n === 2) {
+      return `
+        <div class="footer">
+          <div class="button-row">
+            <button class="btn secondary" onclick="prev()">Back</button>
+            <button class="btn primary" onclick="next()">Continue</button>
+          </div>
+        </div>
+      `;
+    }
+    if (n === 3) {
+      const anySelected = state.consent.knowAsPerson || state.consent.possibleMatch || state.consent.refused;
+      return `
+        <div class="footer">
+          <div class="button-row">
+            <button class="btn secondary" onclick="prev()">Back</button>
+            <button class="btn primary" ${anySelected ? '' : 'disabled'} onclick="confirmConsent()">Confirm</button>
+          </div>
+        </div>
+      `;
+    }
+    if (n === 4) {
+      return `
+        <div class="footer">
+          <div class="button-row">
+            <button class="btn secondary" onclick="prev()">Back</button>
+            <button class="btn primary" onclick="next()">Save</button>
+          </div>
+        </div>
+      `;
+    }
+    if (n === 5) {
+      return `
+        <div class="footer">
+          <div class="button-row">
+            <button class="btn primary" onclick="reset()">Done</button>
+          </div>
+        </div>
+      `;
+    }
+    return '';
+  }
+
+  // ─────────── Handlers ───────────
+  function attachHandlers() {
+    // option clicks (screen 3)
+    document.querySelectorAll('.option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        const key = opt.dataset.key;
+        if (key === 'refused') {
+          // refused is mutually exclusive with the others
+          state.consent.refused = !state.consent.refused;
+          if (state.consent.refused) {
+            state.consent.knowAsPerson = false;
+            state.consent.possibleMatch = false;
+          }
+        } else {
+          state.consent[key] = !state.consent[key];
+          if (state.consent[key]) {
+            state.consent.refused = false;
+          }
+        }
+        render();
+      });
+    });
+
+    // textareas (screen 4)
+    document.querySelectorAll('textarea[data-q]').forEach(ta => {
+      ta.addEventListener('input', e => {
+        state.answers[e.target.dataset.q] = e.target.value;
+      });
+    });
+  }
+
+  // ─────────── Navigation ───────────
+  function next() {
+    if (state.currentScreen < TOTAL_STEPS) {
+      state.currentScreen++;
+      // skip questions screen if user refused
+      if (state.currentScreen === 4 && state.consent.refused) {
+        state.currentScreen = 5;
+      }
+      render();
+      scrollTop();
+    }
+  }
+
+  function prev() {
+    if (state.currentScreen > 1) {
+      state.currentScreen--;
+      // when going back from final to questions, skip questions if refused
+      if (state.currentScreen === 4 && state.consent.refused) {
+        state.currentScreen = 3;
+      }
+      render();
+      scrollTop();
+    }
+  }
+
+  function confirmConsent() {
+    if (state.consent.refused) {
+      state.currentScreen = 5;
+    } else {
+      state.currentScreen = 4;
+    }
+    render();
+    scrollTop();
+  }
+
+  function goRefuse() {
+    state.consent.refused = true;
+    state.consent.knowAsPerson = false;
+    state.consent.possibleMatch = false;
+    state.currentScreen = 5;
+    render();
+    scrollTop();
+  }
+
+  function reset() {
+    state = {
+      currentScreen: 1,
+      consent: { knowAsPerson: false, possibleMatch: false, refused: false },
+      answers: { q1: '', q2: '', q3: '', q4: '' }
+    };
+    render();
+    scrollTop();
+  }
+
+  function scrollTop() {
+    setTimeout(() => {
+      const c = document.querySelector('.content');
+      if (c) c.scrollTop = 0;
+    }, 50);
+  }
+
+  // ─────────── Utilities ───────────
+  function checkSvg() {
+    return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+  }
+
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  // ─────────── Init ───────────
+  render();
 </script>
 </body>
 </html>
